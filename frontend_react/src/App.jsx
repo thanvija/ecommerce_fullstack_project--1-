@@ -123,7 +123,8 @@ const INITIAL_USERS = [
   { id: 1, name: 'Aarav Sharma (Admin)', email: 'admin@novacommerce.in', password: 'admin123', role: 'admin', is_blocked: false, created_at: '2026-09-01' },
   { id: 2, name: 'Priya Nair', email: 'priya@example.com', password: 'user123', role: 'customer', is_blocked: false, created_at: '2026-09-14' },
   { id: 3, name: 'Rohan Verma', email: 'rohan@example.com', password: 'user123', role: 'customer', is_blocked: false, created_at: '2026-10-02' },
-  { id: 4, name: 'Sneha Reddy', email: 'sneha@example.com', password: 'user123', role: 'customer', is_blocked: true, created_at: '2026-10-11' }
+  { id: 4, name: 'Sneha Reddy', email: 'sneha@example.com', password: 'user123', role: 'customer', is_blocked: true, created_at: '2026-10-11' },
+  { id: 5, name: 'thanvija', email: 'thanvija@example.com', password: 'user123', role: 'customer', is_blocked: true, created_at: '2026-10-11' }
 ];
 
 const INITIAL_ORDERS = [
