@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: ecommerce_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ecommerce_user
+      POSTGRES_PASSWORD: ecommerce_password
+      POSTGRES_DB: ecommerce_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+
+  django_auth:
+    build: ./backend_django
+    command: python manage.py runserver 0.0.0.0:8001
+    environment:
+      - DATABASE_URL=postgresql://ecommerce_user:ecommerce_password@db:5432/ecommerce_db
+      - JWT_SECRET_KEY=super-secret-jwt-key-2026
+    ports:
+      - "8001:8001"
+    depends_on:
+      - db
+
+  fastapi_api:
+    build: ./backend_fastapi
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    environment:
+      - DATABASE_URL=postgresql://ecommerce_user:ecommerce_password@db:5432/ecommerce_db
+      - JWT_SECRET_KEY=super-secret-jwt-key-2026
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - django_auth
