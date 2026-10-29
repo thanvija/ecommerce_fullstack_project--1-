@@ -1,14 +1,45 @@
-import React, { useState, useMemo, useEffect } from 'react';
 import {
-  ShoppingBag, ShoppingCart, User, Shield, Search, Filter, Star, Plus, Minus,
-  Trash2, Edit3, CheckCircle2, Package, Truck, Clock, Lock, Unlock, BarChart3,
-  Layers, Code2, Database, Server, LogOut, LogIn, UserPlus, CreditCard,
-  Banknote, ArrowRight, Eye, X, Check, AlertCircle, Copy, Terminal, Sparkles,
-  ChevronRight, RefreshCw
+  AlertCircle,
+  ArrowRight,
+  Banknote,
+  BarChart3,
+  Check,
+  CheckCircle2,
+  Code2,
+  Copy,
+  CreditCard,
+  Edit3,
+  Eye,
+  Layers,
+  Lock,
+  LogOut,
+  Minus,
+  Package,
+  Plus,
+  Search,
+  Server,
+  Shield,
+  ShoppingBag, ShoppingCart,
+  Sparkles,
+  Star,
+  Terminal,
+  Trash2,
+  Truck,
+  Unlock,
+  User,
+  X
 } from 'lucide-react';
+import { useEffect, useMemo, useState } from 'react';
 import {
-  ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid,
-  PieChart, Pie, Cell
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Cell,
+  Pie,
+  PieChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis, YAxis
 } from 'recharts';
 
 // --- INITIAL SEED DATA (Matches Database Schema) ---
